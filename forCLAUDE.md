@@ -5,10 +5,10 @@ This repo uses a node-graph workflow for scoped tasks. Read this before acting o
 
 ## Files
 
-- `workflow/<task>/master.md` — the master file. Single source of truth for the DoD.
+- `workflow/<task>/master.md` — the master file. Single source of truth for the DoD (Definition of Done).
 - `workflow/<task>/investigations/*.md` — investigation nodes (new lines of inquiry).
 - `workflow/<task>/expansions/*.md` — expansion nodes (deepen an existing master slot).
-- Work Units are tracked *in* `master.md` and closed with a git commit SHA.
+- Work Units are tracked _in_ `master.md` and closed with a git commit SHA.
 
 ## Node front-matter (every node file starts with this)
 
@@ -39,6 +39,12 @@ takeaway: <one line, filled on completion>
    need depth on one node, say so and open just that one.
 5. **Execution chatter stays out of the master file.** Syntax questions, bug checks, intrinsic
    lookups during drive-mode are ephemeral. Do not record them as nodes.
+6. **Work Units are the review gate.** This is where code enters the repo, so this is where
+   scrutiny lives — not in exposition or research. A delegated WU returns a reviewable diff +
+   a note on assumptions, scoped to ONE clean commit, and the human reviews before it lands.
+   Exposition and research return understanding (cheap to verify, self-correcting via expand) —
+   do not apply WU-grade review friction there. Scale scrutiny to whether the output is a
+   change to the codebase (review it) or understanding (cite the main files and move on).
 
 ## Custom subagents (in .claude/agents/)
 

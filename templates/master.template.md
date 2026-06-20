@@ -1,19 +1,18 @@
 ---
 type: master
-task: simd-fast-invsqrt
+task: <task-name>
 ---
 
-# Master: SIMD fast inverse sqrt
+# Master: <task-name>
 
 ## Background
 
-Fast inverse square root currently runs scalar; the task is to enable it under SIMD so it
-processes a vector of lanes per instruction. invsqrt sits in a hot path, so vectorizing it is
-a throughput win proportional to lane width.
+<placeholder>
+This section should be generated upon a new task being created and be filled with the purpose
 
 <!-- A bullet that feels thin is a candidate for an EXPANSION node. Don't expand pre-emptively. -->
 
-## DoD (provisional)
+## DoD
 
 - [ ] SIMD invsqrt within an acceptable error bound of scalar (bound TBD — see investigations).
 - [ ] Measurable positive throughput vs. scalar baseline on target hardware (metric TBD).
@@ -37,8 +36,8 @@ _(empty)_
      Status: open | in-progress | done @ <SHA>. One clean commit per WU. -->
 
 - [x] **W0 — locate API seam + add vectorization-flag unit test.** Found the kernel-API path
-  under which the casm changes sit; identified the toggle params for vectorization; added a
-  unit test driving the result with the new flag. _done @ <SHA>_
+      under which the casm changes sit; identified the toggle params for vectorization; added a
+      unit test driving the result with the new flag. _done @ <SHA>_
 
 - [ ] _(next WUs authored as understanding accrues)_
 
