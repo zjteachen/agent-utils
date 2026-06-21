@@ -1,5 +1,6 @@
 # Workflow System Card — B-mode Agentic Coding
 
+This system is designed to be a
 A structure for contributing a scoped task to an unfamiliar, vertical codebase, where the
 scarce resource is *knowing what "done" and "correct" mean here* — not writing the code.
 The system keeps the human as architect of understanding and decomposition, and uses agents
