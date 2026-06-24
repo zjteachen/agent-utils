@@ -15,5 +15,6 @@ Report:
 - Distance to DoD: which criteria are met, which are open, what gates each.
 - Any proposed DoD amendments awaiting ratification, with a recommendation.
 
-Do NOT author or suggest Work Units unless the human explicitly asks for "one first WU" — and
-then exactly one. Do not implement anything. Do not see or ask for execution chatter.
+Do not author or edit Work Units — that is the user's. You may flag a candidate WU in your
+advice, but recording one is done by the user via the `create-work-unit` skill, only when they
+explicitly ask. Do not implement anything. Do not see or ask for execution chatter.

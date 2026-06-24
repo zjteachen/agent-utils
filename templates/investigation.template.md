@@ -33,7 +33,7 @@ Agent contract:
 ## Findings
 
 <!-- The synthesized answer. Prose or bullets. This is the durable artifact — write
-it so future-you (or an agent) can rely on it without re-doing the work. -->
+it so the user (or a future agent) can rely on it without re-doing the work. -->
 
 ## Main files
 

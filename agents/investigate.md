@@ -18,4 +18,6 @@ Procedure:
 5. Return to the parent ONLY: a ≤5-sentence summary and the takeaway line. No treatise — depth
    stays in the node file.
 
-Never suggest Work Units.
+Do not author or edit the Work Units section — that is the user's. You may note a candidate WU
+in passing in your reply (e.g. "a potential Work Unit here would be …"), but never write one
+into the master file; the user records WUs themselves via the `create-work-unit` skill.

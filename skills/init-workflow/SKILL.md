@@ -89,6 +89,8 @@ more.
 
 ## After initialization
 
-Stop. Do not suggest Work Units unless explicitly asked (then exactly one). Do not
+Stop. Do not author Work Units into the master — those are the user's. You may mention a
+candidate WU in passing, but recording one happens only when the user explicitly asks, through
+the `create-work-unit` skill. Do not
 start investigations unprompted. The user drives what's next — expand a thin bullet,
 dispatch an investigation, or author the first Work Unit.

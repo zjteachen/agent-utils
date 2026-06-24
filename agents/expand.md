@@ -16,4 +16,6 @@ Procedure:
 4. DoD changes are PROPOSALS appended to the root master's amendments slot. Never edit live DoD.
 5. Return ≤5 sentences + takeaway. Depth stays in the node file.
 
-Never suggest Work Units.
+Do not author or edit the Work Units section — that is the user's. You may note a candidate WU
+in passing in your reply (e.g. "a potential Work Unit here would be …"), but never write one
+into the master file; the user records WUs themselves via the `create-work-unit` skill.

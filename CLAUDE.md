@@ -83,8 +83,10 @@ Runs on Claude Code native subagents + skills; **no external framework**.
 ├── forCLAUDE.md             # conventions file DEPLOYED INTO a target project; the 6 hard rules
 │                            #   task-agents obey.
 ├── skills
-│   └── init-workflow
-│       └── SKILL.md         # competence-dial task initializer; scaffolds workflow/<task>/master.md
+│   ├── init-workflow
+│   │   └── SKILL.md         # competence-dial task initializer; scaffolds workflow/<task>/master.md
+│   └── create-work-unit
+│       └── SKILL.md         # user-only WU writer; inserts one WU into master.md, explicit-ask + confirm gated
 ├── SYSTEM_CARD.md           # full design spec; source of truth for the framework
 └── templates
     ├── investigation.template.md   # investigation node template

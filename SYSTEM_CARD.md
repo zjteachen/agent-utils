@@ -1,8 +1,7 @@
 # Workflow System Card — B-mode Agentic Coding
 
-This system is designed to be a
-A structure for contributing a scoped task to an unfamiliar, vertical codebase, where the
-scarce resource is *knowing what "done" and "correct" mean here* — not writing the code.
+This system is designed to be a structure for contributing a scoped task to an unfamiliar, vertical codebase, where the
+scarce resource is _knowing what "done" and "correct" mean here_ — not writing the code.
 The system keeps the human as architect of understanding and decomposition, and uses agents
 for bounded reconnaissance that returns compressed artifacts.
 
@@ -11,7 +10,7 @@ for bounded reconnaissance that returns compressed artifacts.
 Every piece of research must terminate by writing into a fixed structure. The structure —
 not curiosity — decides what is worth pursuing. This defeats the two failure modes:
 
-- **Burrowing** (depth without a stopping rule): killed because each node has a *return type*.
+- **Burrowing** (depth without a stopping rule): killed because each node has a _return type_.
   A node that returns a treatise instead of its scoped answer has failed, regardless of how
   interesting the treatise is. Depth goes in the linked file; the index gets the takeaway.
 - **Knowledge overhead** (breadth without a stopping rule): killed because you hold a shallow
@@ -19,34 +18,34 @@ not curiosity — decides what is worth pursuing. This defeats the two failure m
 
 ## The master file is a coordination layer, not an execution layer
 
-It holds *task structure* you authored or ratified. It never holds execution chatter
+It holds _task structure_ you authored or ratified. It never holds execution chatter
 (syntax questions, "check this for bugs," intrinsic lookups) — that is ephemeral, local to
 a node's working session, and evaporates. The single source of truth for "done" is the
 master file's DoD, and only that.
 
 ## Node taxonomy
 
-Three node types, separated on two axes: *deepen an existing slot vs. open a new line*, and
-*return understanding vs. return action*.
+Three node types, separated on two axes: _deepen an existing slot vs. open a new line_, and
+_return understanding vs. return action_.
 
-| Node | Opens | Returns | Lands in master file as | Can propose DoD change |
-|------|-------|---------|--------------------------|------------------------|
-| **Expansion** | deepens an *existing* slot | understanding | the deepened bullet itself (+ link to depth) | yes |
-| **Investigation** | a *new* line the structure didn't anticipate | understanding | one-line entry in Investigations index (+ link) | yes |
-| **Work Unit (WU)** | an actionable change | a diff, closed at a commit SHA | entry in Work Units section (authored by you) | yes |
+| Node               | Opens                                        | Returns                        | Lands in master file as                         | Can propose DoD change |
+| ------------------ | -------------------------------------------- | ------------------------------ | ----------------------------------------------- | ---------------------- |
+| **Expansion**      | deepens an _existing_ slot                   | understanding                  | the deepened bullet itself (+ link to depth)    | yes                    |
+| **Investigation**  | a _new_ line the structure didn't anticipate | understanding                  | one-line entry in Investigations index (+ link) | yes                    |
+| **Work Unit (WU)** | an actionable change                         | a diff, closed at a commit SHA | entry in Work Units section (authored by you)   | yes                    |
 
-- **Expansions** correspond to the *deepening* phase: a known thing is too thin.
-- **Investigations** correspond to the *discovery* phase: a question the original framing
+- **Expansions** correspond to the _deepening_ phase: a known thing is too thin.
+- **Investigations** correspond to the _discovery_ phase: a question the original framing
   couldn't contain (e.g. "what is the blast zone?").
-- **WUs** are the *action* phase.
+- **WUs** are the _action_ phase.
 
 All three are expandable (investigations can themselves be expanded), producing a graph.
 
 ## Graph integrity: root-pointer, not parent-pointer
 
 Nesting produces a graph. The one operation that must stay coherent across depth is
-*DoD amendment*. Therefore every node carries a **root link** = the master file whose DoD it
-may propose amendments to. A node three levels deep proposes to the *master* DoD, never to
+_DoD amendment_. Therefore every node carries a **root link** = the master file whose DoD it
+may propose amendments to. A node three levels deep proposes to the _master_ DoD, never to
 its immediate parent. A separate **parent link** exists only for human navigation. Keep these
 distinct: the file tree may get tangled (deferred problem) without the amendment path ever
 becoming ambiguous.
@@ -54,7 +53,7 @@ becoming ambiguous.
 ## DoD discipline
 
 - DoD starts as a **provisional, plain-language guess** written before research. Research
-  exists to *falsify and refine* it, not to precede it.
+  exists to _falsify and refine_ it, not to precede it.
 - DoD accretes discrete checks/tests as recon confirms what "done" means.
 - Any node may **propose** a DoD amendment; it lands in a `proposed amendments` slot.
 - Amendments are **ratified by you** (optionally on the overseer's advice) before they
@@ -64,11 +63,13 @@ becoming ambiguous.
 ## Work Units
 
 - The Work Units section **starts empty**. WUs are **defined by you**, as an output of
-  research you understood. The system does **not** suggest WUs by default — decomposition is
-  where the understanding lives, and that judgment is yours to build, not the agent's to hand
-  you.
+  research you understood — decomposition is where the understanding lives, and that judgment is
+  yours to build. The system **cannot directly modify or create Work Units**, but can suggest
+  them in conversation. Creating one is a deliberate user action through the `create-work-unit`
+  skill, which transcribes a WU you've architected — only when explicitly asked, and with
+  confirmation before it writes.
 - A single explicit **"suggest one first WU"** stuck-button exists for when you're truly
-  stuck. It proposes *one*, only when asked, never unprompted, never three.
+  stuck. It proposes _one_, only when asked, never unprompted, never three.
 - Each WU is **scoped to one clean reviewable commit**. If it can't be one commit, it's two
   WUs. Status: `open → in-progress → done @ <SHA>`. Once a SHA, the node is frozen; its depth
   (the diff) lives in git, not in markdown.
@@ -90,11 +91,11 @@ Nodes are creatable and executable in **any order**. There is no enforced resear
 phase — both are just nodes on the graph. "Stop research early and do something actionable" =
 leave Open Questions unexpanded and create a WU now. The stopping condition for research is
 **not** "I understand everything" — it's "no remaining Open Question blocks defining a WU."
-Unknowns you can resolve *while* implementing are not blockers.
+Unknowns you can resolve _while_ implementing are not blockers.
 
 ## Compression (why links, not inline)
 
-A link decouples *depth of research* from *cost in context* — the coupling that causes both
+A link decouples _depth of research_ from _cost in context_ — the coupling that causes both
 traps. The full breakdown lives in a linked file; the master file holds a one-line summary +
 link. Future context loads the summary; depth is retrievable but not resident. This is the
 on-disk analogue of what a subagent already does in-session: isolate the noise, return only

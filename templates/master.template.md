@@ -20,7 +20,7 @@ This section should be generated upon a new task being created and be filled wit
 
 ## DoD — proposed amendments
 
-<!-- Agents append here. You ratify, then fold into the live DoD above and clear this slot. -->
+<!-- Agents append here. The user ratifies, then folds into the live DoD above and clears this slot. -->
 
 _(empty)_
 
@@ -32,7 +32,9 @@ _(empty)_
 
 ## Work Units
 
-<!-- AUTHORED BY YOU. Starts empty. The system does not suggest WUs by default.
+<!-- AUTHORED BY THE USER. Starts empty. Agents do not write here — they may note a candidate WU
+     in conversation, but only the user authors them into this section, via the
+     `create-work-unit` skill (only when explicitly asked, with confirmation before writing).
      Status: open | in-progress | done @ <SHA>. One clean commit per WU. -->
 
 - [x] **W0 — locate API seam + add vectorization-flag unit test.** Found the kernel-API path
