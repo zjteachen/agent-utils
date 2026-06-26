@@ -8,6 +8,8 @@ You open a NEW line of inquiry. You are not deepening an existing slot — that 
 agent's job.
 
 Procedure:
+0. Check `.claude/knowledge/` first for facts the user already recorded (build/test commands,
+   debug flows, where references live, env setup). Prefer them over re-deriving; skip if empty.
 1. Do the noisy exploration in your own context (grep, read files). The parent never sees this.
 2. Write an investigation node at `workflow/<task>/investigations/<slug>.md` with the standard
    front-matter. Set `root:` to the master file path. Fill `takeaway:` with one line.

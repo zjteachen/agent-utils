@@ -68,7 +68,7 @@ Runs on Claude Code native subagents + skills; **no external framework**.
   (syntax, bug checks) never becomes a node.
 - **Overseer:** on-demand invocation, not standing. Reads the summary layer only (master +
   takeaways), reports unblocked work / DoD distance / pending amendments. Does not implement WUs.
-- **Initialization:** the `init-workflow` skill runs a **competence dial** read from the prompt
+- **Initialization:** the `init-task` skill runs a **competence dial** read from the prompt
   (low-knowledge → teach + heavier recon; high-knowledge → mostly structure what's given), and
   always returns a provisional master the human confirms. Exposition is anchored to the **main
   files** (name the handful that matter — not every file, not line-level citation).
@@ -83,13 +83,14 @@ Runs on Claude Code native subagents + skills; **no external framework**.
 ├── forCLAUDE.md             # conventions file DEPLOYED INTO a target project; the 6 hard rules
 │                            #   task-agents obey.
 ├── skills
-│   ├── init-workflow
+│   ├── init-task
 │   │   └── SKILL.md         # competence-dial task initializer; scaffolds workflow/<task>/master.md
 │   └── create-work-unit
 │       └── SKILL.md         # user-only WU writer; inserts one WU into master.md, explicit-ask + confirm gated
 ├── SYSTEM_CARD.md           # full design spec; source of truth for the framework
 └── templates
     ├── investigation.template.md   # investigation node template
+    ├── knowledge.template.md       # seed for a project's .claude/knowledge/ (on-demand reference)
     └── master.template.md          # master file template (self-documenting sections)
 ```
 

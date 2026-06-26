@@ -1,0 +1,10 @@
+{
+  "name": "cybernetics",
+  "version": "0.1.0",
+  "description": "Agentic coding workflow that keeps the developer as architect of understanding and decomposition. Bundles the init-task and create-work-unit skills, the investigate/expand/overseer recon subagents, and the node templates. Currently focused on scoped contributions (Scenario B); expanding to all modes.",
+  "author": {
+    "name": "teahousechen",
+    "email": "t47chen@uwaterloo.ca"
+  },
+  "keywords": ["cybernetics", "workflow", "agentic-coding", "research", "subagents"]
+}

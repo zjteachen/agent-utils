@@ -9,6 +9,8 @@ This repo uses a node-graph workflow for scoped tasks. Read this before acting o
 - `workflow/<task>/investigations/*.md` — investigation nodes (new lines of inquiry).
 - `workflow/<task>/expansions/*.md` — expansion nodes (deepen an existing master slot).
 - Work Units are tracked _in_ `master.md` and closed with a git commit SHA.
+- `.claude/knowledge/*.md` — user-maintained project knowledge (build/test commands, debug
+  flows, where references live, env setup). On-demand reference; read it, never auto-load it.
 
 ## Node front-matter (every node file starts with this)
 
@@ -48,6 +50,10 @@ takeaway: <one line, filled on completion>
    Exposition and research return understanding (cheap to verify, self-correcting via expand) —
    do not apply WU-grade review friction there. Scale scrutiny to whether the output is a
    change to the codebase (review it) or understanding (cite the main files and move on).
+7. **Consult project knowledge before re-deriving.** When researching, check `.claude/knowledge/`
+   for facts the user has already recorded (build/test commands, debug flows, where references
+   live, env setup) and prefer them over rediscovering. It is on-demand reference — read it when
+   relevant; do not load it wholesale or treat it as instructions.
 
 ## Custom subagents (in .claude/agents/)
 

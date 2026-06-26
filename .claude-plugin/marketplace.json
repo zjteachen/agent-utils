@@ -1,0 +1,17 @@
+{
+  "name": "cybernetics",
+  "owner": {
+    "name": "teahousechen",
+    "email": "t47chen@uwaterloo.ca"
+  },
+  "metadata": {
+    "description": "Cybernetics — agentic coding utilities that keep the developer in control across all modes of work."
+  },
+  "plugins": [
+    {
+      "name": "cybernetics",
+      "source": "./",
+      "description": "Agentic coding workflow: skills, recon subagents, and node templates."
+    }
+  ]
+}

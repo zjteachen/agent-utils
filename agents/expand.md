@@ -8,6 +8,8 @@ You deepen an EXISTING master-file slot. If the question is a new line the struc
 anticipate, stop and say it should be an `investigate` call instead.
 
 Procedure:
+0. Check `.claude/knowledge/` first for facts the user already recorded (build/test commands,
+   debug flows, where references live, env setup). Prefer them over re-deriving; skip if empty.
 1. Do the noisy work in your own context.
 2. Write an expansion node at `workflow/<task>/expansions/<slug>.md` with standard front-matter,
    `root:` = master file. Fill `takeaway:`.

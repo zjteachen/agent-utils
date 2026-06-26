@@ -1,5 +1,5 @@
 ---
-name: init-workflow
+name: init-task
 description: Initialize a new task workflow — create workflow/<task>/ and a provisional master.md for a scoped engineering task on an unfamiliar codebase. Use when the user starts a task: "/start-task", "set up a workflow", "init a task", "scope out this task", or describes something they're about to begin contributing. Adapts to the user's competence — from "I don't even know what this means, where do I start" to "here's the file, the metric, and the constraints, just scope it." Explores as much as the user needs and always returns a PROVISIONAL master file the user confirms before it goes live.
 ---
 
@@ -69,10 +69,13 @@ more.
 1. **Read the dial** from the prompt. Decide how much to teach and explore.
 2. **Teach if needed.** If the user flagged not knowing something, explain it plainly
    first — that is part of the value.
-3. **Search + scope.** Take what the user supplied; search the repo (if present) to
-   find the main files and fill gaps. Heavier when the dial is low, minimal when high.
-4. **Draft the provisional master file.** Copy workflow/\_templates/master.template.md
-   to workflow/<task-slug>/master.md and fill it:
+3. **Search + scope.** First check `.claude/knowledge/` for facts the user has already recorded
+   (build/test commands, debug flows, where references live, env setup) and lean on them instead
+   of re-deriving. Then take what the user supplied and search the repo (if present) to find the
+   main files and fill gaps. Heavier when the dial is low, minimal when high.
+4. **Draft the provisional master file.** Copy the bundled template
+   `${CLAUDE_PLUGIN_ROOT}/templates/master.template.md` to `workflow/<task-slug>/master.md`
+   (run the copy with Bash so the env var resolves), then fill it:
    - Background: the task's purpose and meaning, anchored to the main files it lives
      in. Thin bullets flagged as expansion candidates.
    - DoD: provisional, labelled. User-stated criteria as given; criteria you inferred
@@ -84,6 +87,9 @@ more.
    - Work Units: empty.
    - Open questions: everything unsure + recon-surfaced unknowns.
      Create empty workflow/<task-slug>/investigations/ and expansions/ folders.
+   - If `.claude/knowledge/` does not exist, create it and seed it from
+     `${CLAUDE_PLUGIN_ROOT}/templates/knowledge.template.md` (copy with Bash) so the user has a
+     place to record project facts. If it already exists, leave it untouched.
 5. **Confirm.** Present the draft, name the main files it rests on, state that the DoD
    is provisional and theirs to change, and get confirmation.
 
