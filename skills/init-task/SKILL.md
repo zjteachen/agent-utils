@@ -1,6 +1,6 @@
 ---
 name: init-task
-description: Initialize a new task workflow — create workflow/<task>/ and a provisional master.md for a scoped engineering task on an unfamiliar codebase. Use when the user starts a task: "/start-task", "set up a workflow", "init a task", "scope out this task", or describes something they're about to begin contributing. Adapts to the user's competence — from "I don't even know what this means, where do I start" to "here's the file, the metric, and the constraints, just scope it." Explores as much as the user needs and always returns a PROVISIONAL master file the user confirms before it goes live.
+description: Initialize a new task workflow — create workflow/<task>/ and a provisional master.md for a scoped engineering task on an unfamiliar codebase. Use when the user starts a task: "/init-task", "set up a task", "init a task", "scope out this task", or describes something they're about to begin contributing. Adapts to the user's competence — from "I don't even know what this means, where do I start" to "here's the file, the metric, and the constraints, just scope it." Explores as much as the user needs and always returns a PROVISIONAL master file the user confirms before it goes live.
 ---
 
 # Initialize a workflow master file

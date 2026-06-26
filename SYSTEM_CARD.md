@@ -32,7 +32,7 @@ It's a common abstraction to consider a unit of work with regards to software de
 
 Available Tools:
 
-- `new-task` (skill): This creates a "task" file that becomes the master node for research. The user provides the task name and description. A `master.md` is created, and an AI agent populates the file with bullets describing the purpose, background, and important files relative to the task. Also, a provisional DoD (Definition of Done) is created, describing what the user should aim for.
+- `init-task` (skill): This creates a "task" file that becomes the master node for research. The user provides the task name and description. A `master.md` is created, and an AI agent populates the file with bullets describing the purpose, background, and important files relative to the task. Also, a provisional DoD (Definition of Done) is created, describing what the user should aim for.
 - `overseer`: Assesses the task file, and gives the user a "status report" with regards to where the task is relative to the current DoD. The overseer can also suggest next steps or unblocking advice. READ-ONLY - never modifies files.
 
 #### Other Notes
@@ -108,7 +108,7 @@ Starts with whatever the user jots; common debug flows are the expected first co
   is always resident — so it does not tax the slim-context goal.
 - **User-written.** Distinct from auto-memory (Claude-written learnings). This is the user's own
   reference, the project-wide, cross-task analogue of the per-task master file.
-- **Consulted by the research phase.** `new-task`, `investigate`, and `expand` check it
+- **Consulted by the research phase.** `init-task`, `investigate`, and `expand` check it
   before re-deriving project facts — a user-known build command or doc location beats
   rediscovering it. See the consult directives in those agents/skills and `forCLAUDE.md`.
 - **Generalizes beyond B-mode.** The same folder is where A-mode architectural planning would
