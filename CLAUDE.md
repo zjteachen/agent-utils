@@ -4,9 +4,9 @@ This file orients a coding agent doing development work **on this repository**. 
 contains a markdown-graph workflow system for agentic coding, plus (the active goal) tooling
 to scaffold that system into an arbitrary project or for a new user.
 
-> Note: this `CLAUDE.md` is for working *on the repo*. It is distinct from `forCLAUDE.md`,
-> which is the conventions file the system *deploys into a target project* for task-agents to
-> obey. Don't conflate the two.
+> Note: this `CLAUDE.md` is for working *on the repo*. It is distinct from `rules/workflow.md`,
+> which is the conventions file the system *deploys into a target project* (as
+> `.claude/rules/cybernetics-workflow.md`) for task-agents to obey. Don't conflate the two.
 
 ## Purpose (read this first — it's the optimization target)
 
@@ -76,12 +76,17 @@ Runs on Claude Code native subagents + skills; **no external framework**.
 ## File tree
 
 ```
+├── .claude-plugin
+│   ├── plugin.json          # plugin manifest (name: cybernetics)
+│   └── marketplace.json     # one-entry marketplace catalog (name: cybernetics)
+├── INSTALL.md               # how to install and set up the plugin
 ├── agents
 │   ├── expand.md            # subagent: deepen an existing master slot → expansion node
 │   ├── investigate.md       # subagent: open a new line of inquiry → investigation node
 │   └── overseer.md          # subagent: on-demand summary-layer advisor (read-only on structure)
-├── forCLAUDE.md             # conventions file DEPLOYED INTO a target project; the 6 hard rules
-│                            #   task-agents obey.
+├── rules
+│   └── workflow.md          # conventions DEPLOYED INTO a target project as
+│                            #   .claude/rules/cybernetics-workflow.md (path-scoped to workflow/**)
 ├── skills
 │   ├── init-task
 │   │   └── SKILL.md         # competence-dial task initializer; scaffolds workflow/<task>/master.md
@@ -94,17 +99,17 @@ Runs on Claude Code native subagents + skills; **no external framework**.
     └── master.template.md          # master file template (self-documenting sections)
 ```
 
-**Deployment note:** for Claude Code to discover them, on setup `agents/`, `skills/`, and
-`forCLAUDE.md` need to land in the target project's `.claude/` (i.e. `.claude/agents/`,
-`.claude/skills/`, and `.claude/CLAUDE.md`), with `templates/` reachable where the skill expects
-it. Building the tooling that does this copy/placement is the active development goal — handle
-the exact destinations when setting up with the code agent.
+**Deployment note:** the repo is itself a Claude Code plugin (`.claude-plugin/`). On install,
+Claude Code auto-discovers `agents/` and `skills/`; `templates/` and `rules/` ship as bundled
+files reachable via `${CLAUDE_PLUGIN_ROOT}`. The conventions in `rules/workflow.md` are NOT
+auto-loaded by the plugin — the `init-task` skill copies them into the target project's
+`.claude/rules/cybernetics-workflow.md` on first run. See `INSTALL.md`.
 
 ## Active development goal
 
-Tooling to set this framework up automatically for a project or a new user — i.e. take the
-source files above and install them into a target repo at the right destinations, ready to use.
-Not yet built.
+Plugin packaging + setup flow (see `INSTALL.md`) is in place for the research phase. Remaining:
+the generation phase (Work Units / `create-work-unit` is built but the spec's Development section
+is still a stub), and validating the research flow on a real task.
 
 ## Design history (so dead ideas aren't re-proposed)
 

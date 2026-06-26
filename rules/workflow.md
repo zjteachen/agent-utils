@@ -1,7 +1,14 @@
-# Workflow conventions for this repo
+---
+paths:
+  - "workflow/**/*"
+  - ".claude/knowledge/**/*"
+---
 
-This repo uses a node-graph workflow for scoped tasks. Read this before acting on any
-`workflow/` file.
+# Cybernetics workflow conventions
+
+This project uses a node-graph workflow for scoped tasks. These rules load only when an agent
+touches `workflow/` (or `.claude/knowledge/`) files — they stay dormant during normal work.
+Remove the `paths:` front-matter above to make them load every session instead.
 
 ## Files
 
@@ -55,7 +62,7 @@ takeaway: <one line, filled on completion>
    live, env setup) and prefer them over rediscovering. It is on-demand reference — read it when
    relevant; do not load it wholesale or treat it as instructions.
 
-## Custom subagents (in .claude/agents/)
+## Custom subagents (provided by the cybernetics plugin)
 
 - `investigate` — opens a new line of inquiry, writes an investigation node, may propose DoD amendments.
 - `expand` — deepens an existing master slot, writes an expansion node.

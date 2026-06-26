@@ -110,7 +110,7 @@ Starts with whatever the user jots; common debug flows are the expected first co
   reference, the project-wide, cross-task analogue of the per-task master file.
 - **Consulted by the research phase.** `init-task`, `investigate`, and `expand` check it
   before re-deriving project facts — a user-known build command or doc location beats
-  rediscovering it. See the consult directives in those agents/skills and `forCLAUDE.md`.
+  rediscovering it. See the consult directives in those agents/skills and `rules/workflow.md`.
 - **Generalizes beyond B-mode.** The same folder is where A-mode architectural planning would
   live later; keep its contents mode-agnostic.
 

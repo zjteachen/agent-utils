@@ -90,6 +90,9 @@ more.
    - If `.claude/knowledge/` does not exist, create it and seed it from
      `${CLAUDE_PLUGIN_ROOT}/templates/knowledge.template.md` (copy with Bash) so the user has a
      place to record project facts. If it already exists, leave it untouched.
+   - If `.claude/rules/cybernetics-workflow.md` does not exist, install the workflow conventions
+     by copying `${CLAUDE_PLUGIN_ROOT}/rules/workflow.md` to it (copy with Bash). If it already
+     exists, leave it untouched.
 5. **Confirm.** Present the draft, name the main files it rests on, state that the DoD
    is provisional and theirs to change, and get confirmation.
 
